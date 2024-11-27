@@ -1,0 +1,48 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Sportify Now" class="action-bar">
+        <ActionItem ios.position="right" android.position="actionBar">
+            <Label text="&#xf0f3;" class="fas" />
+        </ActionItem>
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Sport Filters -->
+            <Label text="Select a sport" class="text-lg font-bold mb-2" />
+            <WrapLayout>
+                <Button text="All" tap="{{ onFilterTap }}" 
+                    class="{{ selectedSport === 'all' ? 'sport-filter selected' : 'sport-filter' }}" />
+                <Button text="Football" tap="{{ onFilterTap }}" 
+                    class="{{ selectedSport === 'football' ? 'sport-filter selected' : 'sport-filter' }}" />
+                <Button text="Formula 1" tap="{{ onFilterTap }}" 
+                    class="{{ selectedSport === 'f1' ? 'sport-filter selected' : 'sport-filter' }}" />
+            </WrapLayout>
+
+            <!-- Live Events -->
+            <Label text="Live Now" class="text-xl font-bold mt-6 mb-2" />
+            <ListView items="{{ liveEvents }}" class="list-group" itemTap="{{ onEventTap }}">
+                <ListView.itemTemplate>
+                    <GridLayout columns="auto, *, auto" rows="auto, auto, auto" class="event-card p-4">
+                        <Image src="{{ league.logo }}" width="30" height="30" row="0" col="0" />
+                        <Label text="{{ title }}" class="font-semibold" row="0" col="1" />
+                        <Label text="{{ broadcastChannel }}" class="text-sm text-blue-600" row="1" col="1" />
+                        <Label text="{{ startTime, 'HH:mm' }}" class="text-sm" row="2" col="1" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+
+            <!-- Upcoming Events -->
+            <Label text="Upcoming Events" class="text-xl font-bold mt-6 mb-2" />
+            <ListView items="{{ upcomingEvents }}" class="list-group" itemTap="{{ onEventTap }}">
+                <ListView.itemTemplate>
+                    <GridLayout columns="auto, *, auto" rows="auto, auto, auto" class="event-card p-4">
+                        <Image src="{{ league.logo }}" width="30" height="30" row="0" col="0" />
+                        <Label text="{{ title }}" class="font-semibold" row="0" col="1" />
+                        <Label text="{{ broadcastChannel }}" class="text-sm text-blue-600" row="1" col="1" />
+                        <Label text="{{ startTime, 'dd MMM HH:mm' }}" class="text-sm" row="2" col="1" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabView androidTabsPosition="bottom" class="tab-view">
+    <TabViewItem title="Home" iconSource="font://&#xf015;" class="fas">
+        <Frame defaultPage="views/home/home-page" />
+    </TabViewItem>
+    <TabViewItem title="Search" iconSource="font://&#xf002;" class="fas">
+        <Frame defaultPage="views/search/search-page" />
+    </TabViewItem>
+    <TabViewItem title="Calendar" iconSource="font://&#xf073;" class="fas">
+        <Frame defaultPage="views/calendar/calendar-page" />
+    </TabViewItem>
+    <TabViewItem title="Settings" iconSource="font://&#xf013;" class="fas">
+        <Frame defaultPage="views/settings/settings-page" />
+    </TabViewItem>
+</TabView>

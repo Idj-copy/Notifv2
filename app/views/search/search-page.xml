@@ -1,0 +1,32 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Search Events" class="action-bar" />
+    
+    <GridLayout rows="auto, auto, *">
+        <!-- Search Bar -->
+        <SearchBar row="0" hint="Search events..." text="{{ searchQuery }}" 
+            submit="{{ onSearch }}" textChange="{{ onSearchTextChange }}" 
+            class="search-bar" />
+
+        <!-- Sport Filters -->
+        <WrapLayout row="1" class="m-2">
+            <Button text="All" tap="{{ onFilterTap }}" 
+                class="{{ selectedSport === 'all' ? 'sport-filter selected' : 'sport-filter' }}" />
+            <Button text="Football" tap="{{ onFilterTap }}" 
+                class="{{ selectedSport === 'football' ? 'sport-filter selected' : 'sport-filter' }}" />
+            <Button text="Formula 1" tap="{{ onFilterTap }}" 
+                class="{{ selectedSport === 'f1' ? 'sport-filter selected' : 'sport-filter' }}" />
+        </WrapLayout>
+
+        <!-- Results List -->
+        <ListView row="2" items="{{ filteredEvents }}" class="list-group" itemTap="{{ onEventTap }}">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *, auto" rows="auto, auto, auto" class="event-card p-4">
+                    <Image src="{{ league.logo }}" width="30" height="30" row="0" col="0" />
+                    <Label text="{{ title }}" class="font-semibold" row="0" col="1" />
+                    <Label text="{{ broadcastChannel }}" class="text-sm text-blue-600" row="1" col="1" />
+                    <Label text="{{ startTime, 'dd MMM HH:mm' }}" class="text-sm" row="2" col="1" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

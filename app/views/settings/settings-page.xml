@@ -1,0 +1,37 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Settings" class="action-bar" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Sport Preferences" class="text-lg font-bold mb-4" />
+            
+            <GridLayout rows="auto, auto, auto" columns="*, auto, auto" class="m-2 p-4 bg-gray-800 rounded">
+                <Label text="Football" class="text-white" row="0" col="0" />
+                <Switch checked="{{ footballEnabled }}" row="0" col="1" />
+                <Switch checked="{{ footballNotifications }}" row="0" col="2" />
+                
+                <Label text="Formula 1" class="text-white" row="1" col="0" />
+                <Switch checked="{{ f1Enabled }}" row="1" col="1" />
+                <Switch checked="{{ f1Notifications }}" row="1" col="2" />
+            </GridLayout>
+
+            <Label text="Notification Settings" class="text-lg font-bold mt-6 mb-4" />
+            <StackLayout class="m-2">
+                <GridLayout columns="*, auto" class="m-2">
+                    <Label text="Event Reminders" class="text-white" col="0" />
+                    <Switch checked="{{ eventReminders }}" col="1" />
+                </GridLayout>
+                
+                <GridLayout columns="*, auto" class="m-2">
+                    <Label text="Live Score Updates" class="text-white" col="0" />
+                    <Switch checked="{{ liveScoreUpdates }}" col="1" />
+                </GridLayout>
+                
+                <GridLayout columns="*, auto" class="m-2">
+                    <Label text="Breaking News" class="text-white" col="0" />
+                    <Switch checked="{{ breakingNews }}" col="1" />
+                </GridLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

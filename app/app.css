@@ -1,0 +1,39 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+.action-bar {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.tab-view {
+    selected-tab-text-color: #3b82f6;
+    android-selected-tab-highlight-color: #3b82f6;
+}
+
+.event-card {
+    background-color: white;
+    border-radius: 8;
+    margin: 8;
+    elevation: 2;
+}
+
+.sport-filter {
+    background-color: #374151;
+    color: white;
+    border-radius: 4;
+    margin: 4;
+    padding: 8;
+}
+
+.sport-filter.selected {
+    background-color: #3b82f6;
+}
+
+.search-bar {
+    background-color: #374151;
+    color: white;
+    border-radius: 8;
+    margin: 8;
+    padding: 8;
+}
